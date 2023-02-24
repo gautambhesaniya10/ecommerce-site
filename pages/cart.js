@@ -129,7 +129,7 @@ const CartPage = ({ error, products }) => {
   );
 };
 
-export async function getServerSideProps(ctx) {
+export async function getStaticProps(ctx) {
   const { token } = parseCookies(ctx);
   if (!token) {
     return {
@@ -138,6 +138,7 @@ export async function getServerSideProps(ctx) {
   }
   const res = await fetch(`${baseUrl}/api/cart`, {
     headers: {
+      "Content-Type": "application/json",
       Authorization: token,
     },
   });

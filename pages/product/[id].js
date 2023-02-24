@@ -95,7 +95,7 @@ const Product = (props) => {
 
       <p className="left-align">{products?.discription}</p>
 
-      {user.role != "user" || user.role === "" && (
+      {user.role !== "user" && (
       <button data-target="modal1" className="btn modal-trigger waves-effect waves-light #c62828 red darken-3">
         Delete
         <i className="material-icons left">delete</i>
